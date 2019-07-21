@@ -76,10 +76,21 @@ class GameActivity : AppCompatActivity() {
         }
 
         private fun nextFragment(fragment: Fragment) {
-            val ft = supportFragmentManager.beginTransaction()
-            ft.replace(R.id.containerGame, fragment)
-            ft.addToBackStack(null)
-            ft.commit()
+//            val ft = supportFragmentManager.beginTransaction()
+//            ft.replace(R.id.containerGame, fragment)
+//            ft.addToBackStack(null)
+//            ft.commit()
+
+              val ft = supportFragmentManager.beginTransaction()
+              ft?.setCustomAnimations(
+                 R.anim.enter_from_right,
+                 R.anim.exit_to_left,
+                 R.anim.enter_from_left,
+                 R.anim.exit_to_right
+               )
+               ft?.replace(R.id.containerGame, fragment)
+               ft?.addToBackStack(null)
+               ft?.commit()
         }
     }
 

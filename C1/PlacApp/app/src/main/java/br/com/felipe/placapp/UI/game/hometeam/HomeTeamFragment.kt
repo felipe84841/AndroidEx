@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 
 import br.com.felipe.placapp.R
+import br.com.felipe.placapp.UI.game.awayteam.AwayTeamFragment
 import kotlinx.android.synthetic.main.fragment_home_team.*
 import kotlinx.android.synthetic.main.fragment_home_team.bntNext
 
@@ -40,6 +41,19 @@ class HomeTeamFragment : Fragment() {
                 getInstance(requireContext())
                 .sendBroadcast(intent)
         }
+    }
+
+    private fun nextScreen() {
+        val ft = activity?.supportFragmentManager?.beginTransaction()
+        ft?.setCustomAnimations(
+            R.anim.enter_from_right,
+            R.anim.exit_to_left,
+            R.anim.enter_from_left,
+            R.anim.exit_to_right
+        )
+        ft?.replace(R.id.containerGame, AwayTeamFragment())
+        ft?.addToBackStack(null)
+        ft?.commit()
     }
 
 }
