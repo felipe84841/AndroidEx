@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">JoKenPo</string>
+    <string name="MainTitle">JoKenPo</string>
+    <string name="Main_bntPlay">Jogar</string>
+    <string name="Main_bntRank">Ranking</string>
+    <string name="Main_bntAbout">Sobre</string>
+    <string name="Main_bntExit">Sair</string>
+    <string name="App_About">Desenvolvido por:\nFelipe Desiglo Ferrare</string>
+</resources>
